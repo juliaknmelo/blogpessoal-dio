@@ -64,4 +64,12 @@ public class User {
     public void setPostage(List<Postage> postage) {
         this.postage = postage;
     }
+
+    public User(Long id, String name, String username, String password, List<Postage> postage) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.postage = postage;
+    }
 }

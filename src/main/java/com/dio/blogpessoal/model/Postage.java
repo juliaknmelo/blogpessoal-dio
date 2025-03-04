@@ -65,4 +65,12 @@ public class Postage {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public Postage(Long id, String title, String text, LocalDateTime date, User user) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.date = date;
+        this.user = user;
+    }
 }
