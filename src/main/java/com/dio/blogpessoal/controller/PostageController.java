@@ -42,7 +42,7 @@ public class PostageController {
                 .body(postageService.createPost(postage));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Postage> updatePost(@RequestBody @Valid Postage postage){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(postageService.updatePost(postage));
