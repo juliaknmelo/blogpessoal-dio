@@ -1,4 +1,4 @@
-package com.dio.blogpessoal.model;
+package com.dio.personalblog.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

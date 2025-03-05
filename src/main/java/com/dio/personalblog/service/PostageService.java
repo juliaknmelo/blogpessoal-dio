@@ -1,6 +1,6 @@
-package com.dio.blogpessoal.service;
+package com.dio.personalblog.service;
 
-import com.dio.blogpessoal.model.Postage;
+import com.dio.personalblog.model.Postage;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,7 +1,7 @@
-package com.dio.blogpessoal.service;
+package com.dio.personalblog.service;
 
-import com.dio.blogpessoal.model.Postage;
-import com.dio.blogpessoal.repository.PostageRepository;
+import com.dio.personalblog.model.Postage;
+import com.dio.personalblog.repository.PostageRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

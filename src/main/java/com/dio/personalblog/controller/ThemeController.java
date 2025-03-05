@@ -1,8 +1,8 @@
-package com.dio.blogpessoal.controller;
+package com.dio.personalblog.controller;
 
-import com.dio.blogpessoal.model.Theme;
-import com.dio.blogpessoal.repository.ThemeRepository;
-import com.dio.blogpessoal.service.ThemeService;
+import com.dio.personalblog.model.Theme;
+import com.dio.personalblog.repository.ThemeRepository;
+import com.dio.personalblog.service.ThemeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

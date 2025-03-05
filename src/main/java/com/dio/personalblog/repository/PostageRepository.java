@@ -1,6 +1,6 @@
-package com.dio.blogpessoal.repository;
+package com.dio.personalblog.repository;
 
-import com.dio.blogpessoal.model.Postage;
+import com.dio.personalblog.model.Postage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

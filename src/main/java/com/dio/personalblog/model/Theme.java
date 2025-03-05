@@ -1,8 +1,7 @@
-package com.dio.blogpessoal.model;
+package com.dio.personalblog.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
