@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostageController {
 
-
+    @Autowired
     private PostageService postageService;
 
 

@@ -73,4 +73,7 @@ public class Postage {
         this.date = date;
         this.user = user;
     }
+
+    public Postage() {
+    }
 }

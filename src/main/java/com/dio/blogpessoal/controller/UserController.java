@@ -1,7 +1,6 @@
 package com.dio.blogpessoal.controller;
 
 import com.dio.blogpessoal.model.User;
-import com.dio.blogpessoal.model.UserLogin;
 import com.dio.blogpessoal.repository.UserRepository;
 import com.dio.blogpessoal.service.UserService;
 import jakarta.validation.Valid;
@@ -35,17 +34,6 @@ public class UserController {
                 .map(response -> ResponseEntity.ok(response)).
                 orElse(ResponseEntity.notFound().build());
     }
-     //PERGUNTAR SOBRE A SERVICE NÃO SER IGUAL A POSTAGE
-
-    @PostMapping("/login")
-    public ResponseEntity<Optional<UserLogin>> loginUser(@RequestBody Optional<UserLogin> userLogin){
-        var login = userService.loginUser(userLogin);
-        return ResponseEntity.status(HttpStatus.OK).body(login);
-        /*return userService.loginUser(userLogin)
-                .map(response -> ResponseEntity.status(HttpStatus.OK).body(response))
-                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());*/
-
-    }
 
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody @Valid User user) {
@@ -54,10 +42,15 @@ public class UserController {
                 .orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@RequestBody @Valid User user){
         return userService.updateUser(user)
                 .map(response -> ResponseEntity.status(HttpStatus.OK).body(response))
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id){
+        userService.deleteUser(id);
     }
 }

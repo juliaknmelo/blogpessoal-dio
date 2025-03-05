@@ -72,4 +72,7 @@ public class User {
         this.password = password;
         this.postage = postage;
     }
+
+    public User() {
+    }
 }
