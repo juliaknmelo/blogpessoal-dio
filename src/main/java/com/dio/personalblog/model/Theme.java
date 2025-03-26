@@ -2,6 +2,7 @@ package com.dio.personalblog.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public class Theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 4, max = 50, message = "The description field must be between 4 and 50 characters long")
+    @NotNull(message = "The description attribute is required ")
     private String description;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "theme", cascade = CascadeType.REMOVE)
@@ -21,18 +22,18 @@ public class Theme {
     private List<Postage> postage;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public @Size(min = 4, max = 50, message = "The description field must be between 4 and 50 characters long.") String getdescription() {
-        return description;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setdescription(@Size(min = 4, max = 50, message = "The description field must be between 4 and 50 characters long.") String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
