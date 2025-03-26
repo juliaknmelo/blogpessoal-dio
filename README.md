@@ -10,6 +10,8 @@ Com o objetivo de colocar em prática o aprendizado aprendido no módulo de API 
 
 Foram desenvolvidas duas entidades: Postage e Theme. Sendo o relacionamento delas ManyToOne. Sendo assim uma postage tem um theme, mas um theme pode ter várias postages. 
 
+- Disponivel em: https://personalblog-dio.onrender.com/
+
 Com isso, foram desenvolvidos os métodos CRUD para ambas as entidades: 
 - Create: criação/post.
 - Read: leitura/exibição.
