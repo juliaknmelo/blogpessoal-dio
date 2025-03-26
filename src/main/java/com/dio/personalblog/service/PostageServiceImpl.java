@@ -47,7 +47,7 @@ public class PostageServiceImpl implements PostageService{
         if(themeRepository.existsById(postage.getTheme().getId())){
             return postageRepository.save(postage);
         }
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Theme does not exist", null);
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "theme does not exist", null);
     }
 
 

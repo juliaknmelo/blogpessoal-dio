@@ -54,7 +54,7 @@ public class ThemeServiceImpl implements ThemeService {
         if(themeRepository.existsById(theme.getId())){
             return Optional.of(themeRepository.save(theme));
         }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "theme does not exist", null);
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Theme does not exist", null);
 
     }
     @Override

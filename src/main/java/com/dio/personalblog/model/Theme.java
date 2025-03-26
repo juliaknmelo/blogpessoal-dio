@@ -13,7 +13,7 @@ public class Theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 4, max = 50, message = "The description field must be between 4 and 50 characters long.")
+    @Size(min = 4, max = 50, message = "The description field must be between 4 and 50 characters long")
     private String description;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "theme", cascade = CascadeType.REMOVE)
