@@ -2,6 +2,7 @@ package com.dio.personalblog.service;
 
 import com.dio.personalblog.model.Postage;
 import com.dio.personalblog.repository.PostageRepository;
+import com.dio.personalblog.repository.ThemeRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,9 @@ public class PostageServiceImpl implements PostageService{
 
     @Autowired
     private PostageRepository postageRepository;
+
+    @Autowired
+    private ThemeRepository themeRepository;
 
     @Override
     public List<Postage> listAllPosts(){
@@ -40,16 +44,22 @@ public class PostageServiceImpl implements PostageService{
 
     @Override
     public Postage createPost(@RequestBody @Valid Postage postage) {
-        return postageRepository.save(postage);
+        if(themeRepository.existsById(postage.getTheme().getId())){
+            return postageRepository.save(postage);
+        }
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Theme does not exist", null);
     }
+
 
     @Override
     public Postage updatePost(@RequestBody @Valid Postage postage){
 
         if(postageRepository.existsById(postage.getId())){
-            return postageRepository.save(postage);
+            if(themeRepository.existsById(postage.getTheme().getId()))
+                return postageRepository.save(postage);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Theme does not exist", null);
         }
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Post does not exist", null);
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Post does not exist", null);
     }
 
     @Override

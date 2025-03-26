@@ -26,10 +26,13 @@ public class ThemeServiceImpl implements ThemeService {
         return themeRepository.findAll();
     }
 
+
     @Override
     public Theme findById(Long id){
         return themeRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
+
+
     @Override
     public List<Theme> findByDescription(String description){
         var listDescription =  themeRepository.findAllByDescriptionContainingIgnoreCase(description);
@@ -51,7 +54,7 @@ public class ThemeServiceImpl implements ThemeService {
         if(themeRepository.existsById(theme.getId())){
             return Optional.of(themeRepository.save(theme));
         }
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "theme does not exist", null);
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "theme does not exist", null);
 
     }
     @Override
